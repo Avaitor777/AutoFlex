@@ -21,6 +21,7 @@ const TopSectionContainer = styled.div`
 
 const LeftContainer = styled.div`
     ${tw`
+        flex
         
         
     `};
