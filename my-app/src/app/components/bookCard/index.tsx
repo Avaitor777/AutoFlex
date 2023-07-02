@@ -143,8 +143,8 @@ export function BookCard() {
             </SmallIcon>
             {isReturnCalendarOpen && ( 
             <DateCalender
-                offset
-            value={returnDate} 
+               offset
+                value={returnDate} 
             onChange={setReturnDate as any }/>
             )}
         </ItemContainer>

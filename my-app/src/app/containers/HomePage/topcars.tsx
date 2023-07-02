@@ -1,12 +1,15 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import tw from "twin.macro";
 import { ICar } from "../../../typings/car";
 import { Car } from "../../components/car";
-import Carousel, { Dots, slidesToShowPlugin } from "@brainhubeu/react-carousel";
-import "@brainhubeu/react-carousel/lib/style.css";
+import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+import { Carousel } from 'react-responsive-carousel';
+
 import { useMediaQuery } from "react-responsive";
 import { SCREENS } from "../../components/responsive";
+import { DocumentData, QuerySnapshot, onSnapshot } from "firebase/firestore";
+import { cardCollection } from "../../../lib/controller";
 
 
 const TopCarsContainer = styled.div`
@@ -39,8 +42,11 @@ const Title = styled.h2`
 const CarsContainer = styled.div`
     ${tw`
         w-full
-        flex
         flex-wrap
+        items-center
+        flex
+        flex-col
+        items-center
         justify-center
         mt-7
         md:mt-10 
@@ -48,83 +54,109 @@ const CarsContainer = styled.div`
 `;
 
 export function TopCars() {
-    const [current, setCurrent] = useState(0);
+    const [current, setCurrent] = useState([]);
 
     const isMobile =  useMediaQuery({ maxWidth: SCREENS.sm });
+    
+    const [card, setCard] =useState<ICar[]>([])
+    const testCar=card;
+    useEffect(()=> onSnapshot(cardCollection,(snapshot: 
+        QuerySnapshot<DocumentData>)=>{
+      
+        setCard(
+            snapshot.docs.map((doc) => {
+                return{
+                 id: doc.id,
+                 ...doc.data(),
+                };
+                 })
+        )
+     //store the value in testCar
+     testCar.push(...snapshot.docs.map((doc)=>doc.data()));
+    }), []);
 
-    const testCar: ICar = {
-        name: "Audi S3 Car",
-        mileage: "10k",
-        thumbnailSrc:
-          "https://cdn.jdpower.com/Models/640x480/2017-Audi-S3-PremiumPlus.jpg",
-        dailyPrice: 70,
-        monthlyPrice: 1600,
-        gearType: "Auto",
-        gas: "Petrol",
+    console.log(card,"card")
+    
+    
+     
+      const cars = testCar.map((car)=><Car {...car} />)
+    
+      const numberOfDots = isMobile ? cars.length : Math.ceil(cars.length / 3);
+      const slidesToShow = isMobile ? 1 : 3;
+      const totalSlides = cars.length;
+      const getSlides = () => {
+        const slides = [];
+        let startIndex = 0;
+        while (startIndex < totalSlides) {
+          slides.push(
+            <div key={startIndex} style={{display:'flex',flexDirection:'row'}}>
+              {cars.slice(startIndex, startIndex + slidesToShow)}
+            </div>
+          );
+          startIndex += slidesToShow;
+        }
+        return slides;
       };
     
-      const testCar2: ICar = {
-        name: "HONDA cITY 5 Seater Car",
-        mileage: "20k",
-        thumbnailSrc:
-          "https://shinewiki.com/wp-content/uploads/2019/11/honda-city.jpg",
-        dailyPrice: 50,
-        monthlyPrice: 1500,
-        gearType: "Auto",
-        gas: "Petrol",
-      };    
 
-      const cars = [ 
-        <Car {...testCar2}/>, 
-        <Car {...testCar}/>, 
-        <Car {...testCar2}/>, 
-        <Car {...testCar}/>, 
-        <Car {...testCar2}/> 
-        ];
-    
-    const numberOfDots = isMobile ? cars.length : Math.ceil(cars.length / 3);
-
-    return <TopCarsContainer>
-        <Title>Explore our top deals</Title>
-        <CarsContainer>
-            <Carousel value={current} onChange={setCurrent} 
-            slides={cars}
-                plugins={[
-                    "clicktochange",
+      return (
+        <TopCarsContainer>
+          <Title>Explore our top deals</Title>
+          <CarsContainer > 
+          <Carousel
+          showStatus={false}
+          showThumbs={false}
+          showArrows={true}
+          swipeable={true}
+          infiniteLoop={true}
+        >
+          {getSlides()}
+          
+        </Carousel>
+            
+          </CarsContainer>
+        </TopCarsContainer>
+      );
+    }
+   
+ /*   <Carousel
+              value={current}
+              onChange={setCurrent}
+              slides={cars}
+              plugins={[
+                "clicktochange",
+                {
+                  resolve: slidesToShowPlugin,
+                  options: {
+                    numberOfSlides: 3,
+                  },
+                },
+              ]}
+              breakpoints={{
+                640: {
+                  plugins: [
                     {
-                        resolve: slidesToShowPlugin,
-                        options: {
-                            numberOfSlides: 3,
-                        },
+                      resolve: slidesToShowPlugin,
+                      options: {
+                        numberOfSlides: 1,
+                      },
                     },
-                ]}
-                breakpoints={{
-                    640: {  
-                        plugins: [
-                            {
-                                resolve: slidesToShowPlugin,
-                                options: {
-                                    numberOfSlides: 1
-                                },
-                            },
-                        ],
+                  ],
+                },
+                900: {
+                  plugins: [
+                    {
+                      resolve: slidesToShowPlugin,
+                      options: {
+                        numberOfSlides: 2,
+                      },
                     },
-                    900: {
-                        plugins: [
-                            {
-                                resolve: slidesToShowPlugin,
-                                options: {
-                                    numberOfSlides: 2
-                                },
-                            },
-                        ],
-                    },
-                }}
+                  ],
+                },
+              }}
             />
-            <Dots 
-            value={current} onChange={setCurrent} number={numberOfDots} />
-        </CarsContainer>
-    </TopCarsContainer>
-        
-}
-
+    <Dots value={current} onChange={setCurrent} number={numberOfDots} />
+    */
+    
+    
+    
