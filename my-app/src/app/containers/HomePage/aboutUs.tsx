@@ -9,7 +9,6 @@ const AboutUsContainer = styled.div`
     ${tw`
         w-full
         flex
-        flex-wrap
         items-center
         justify-center
         pt-4 

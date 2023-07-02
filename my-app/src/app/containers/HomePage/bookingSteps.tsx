@@ -101,7 +101,7 @@ export function BookingSteps() {
                         <FontAwesomeIcon icon={faMapMarkedAlt} />
                     </StepIcon>
                 </Step>
-                <StepTitle>Choose locatio</StepTitle>
+                <StepTitle>Choose location</StepTitle>
                 <StepDescription>
                     Pickup the best Date to rent your car for you 
                 </StepDescription>

@@ -3,7 +3,7 @@ import styled from "styled-components";
 import tw from "twin.macro";
 import { Logo } from "../logo";
 import { NavItems } from "./navitems";
-
+import {  useNavigate } from 'react-router-dom';
 
 const NavBarContainer = styled.div`
     min-height: 68px;
@@ -23,12 +23,21 @@ const NavBarContainer = styled.div`
 const LogoContainer = styled.div``;
 
 export function NavBar() {
+    const navigate= useNavigate();
+    const logOut =() =>
+    {
+        localStorage.clear()
+       
+        navigate("/")
+    }
     return (
     <NavBarContainer>
         <LogoContainer>
             <Logo color={"dark"} />
         </LogoContainer>
         <NavItems />
+        <button onClick={logOut}>Log Out</button>
+
     </NavBarContainer>
 
     );

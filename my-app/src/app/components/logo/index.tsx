@@ -29,7 +29,7 @@ const LogoText = styled.div`
      ${({ color }: any) => color === "white" ? tw`text-white` : tw`text-black` }
 `as any;
 
-const Image = styled.div`
+const image = styled.div`
     
     width: auto;
     ${tw`h-6 md:h-9`};

@@ -156,7 +156,7 @@ export function TopSection() {
 
     return <TopSectionContainer>
         <LeftContainer>
-            <Slogan>Rent The Best Qulity Car's with us</Slogan>
+            <Slogan>Rent The Best Quality Car's with us</Slogan>
             <Description>
                 Always choose the best car from our local stores or order it remotely
                 at the best price fro you and get the best quality cars for as long as 

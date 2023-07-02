@@ -134,16 +134,16 @@ const RentButton = styled(Button)`
 
 export function Car(props: ICarProps)  {
 
-        const { name, thumbnailSrc, dailyPrice, monthlyPrice, mileage, gearType, gas } = props;
+        const { cName, thumbnailSrc, dPrice, mPrice, mileage, gearType, gasType} = props;
 
         return <CarContainer>
             <CarThumbnail>
-                <img src={thumbnailSrc} />
+                <img src={thumbnailSrc} alt={ cName }/>
             </CarThumbnail>
-            <CarName>{ name }</CarName>
+            <CarName>{ cName }</CarName>
             <PricesContainer>
-                <DailyPrice>${ dailyPrice }<SmallText>/Day</SmallText></DailyPrice>
-                <MonthlyPrice>${ monthlyPrice }<SmallText>/Month</SmallText></MonthlyPrice>
+                <DailyPrice>${ dPrice }<SmallText>/Day</SmallText></DailyPrice>
+                <MonthlyPrice>${ mPrice }<SmallText>/Month</SmallText></MonthlyPrice>
             </PricesContainer>
             <Seperator />
             <CarDetailsContainer>
@@ -163,7 +163,7 @@ export function Car(props: ICarProps)  {
                     <SmallIcon>
                         <FontAwesomeIcon icon={faFillDrip} />
                     </SmallIcon>
-                    <CarInfo>{ gas }</CarInfo>
+                    <CarInfo>{ gasType }</CarInfo>
                 </CarDetail>
             </CarDetailsContainer>
             <RentButton text="Rent now" />

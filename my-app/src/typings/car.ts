@@ -1,10 +1,11 @@
 export interface ICar {
-    thumbnailSrc: string;
-    name: string;
-    mileage: string;
-    gearType: string;
-    dailyPrice: number;
-    monthlyPrice: number;
-    gas: string;
+    thumbnailSrc?: string;
+    cName?: string;
+    mileage?: string;
+    gearType?: string;
+    dPrice?: number;
+    mPrice?: number;
+    gasType?: string;
+    id?: string;
     
 }
