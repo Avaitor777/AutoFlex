@@ -7,6 +7,7 @@ import {  useNavigate } from 'react-router-dom';
 
 const NavBarContainer = styled.div`
     min-height: 68px;
+    color:azure;
     ${tw`
         w-full 
         max-w-screen-Zxl //1536px for Zxl (screen)

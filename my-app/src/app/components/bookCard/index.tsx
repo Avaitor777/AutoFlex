@@ -1,12 +1,10 @@
 import React, { useState } from "react";
-
 import { faCalendarAlt, faCaretDown, faCaretUp } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import styled, { css } from "styled-components";
 import tw from "twin.macro";
 import { Marginer } from "../marginer";
 import { Button } from "../button";
-
 import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css";
 import { SCREENS } from "../responsive";

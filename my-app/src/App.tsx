@@ -3,18 +3,8 @@ import './App.css';
 import styled from 'styled-components';
 import { HomePage } from './app/containers/HomePage';
 import tw from 'twin.macro';
-import Landing from './app/components/googleSignin/LandingPage'
+import Landing from './app/components/googleSignin/Test'
 import { BrowserRouter, Route, Routes} from 'react-router-dom';
-
-const AppContainer  = styled.div`
-  ${tw`
-  w-full
-  h-full
-  flex
-  flex-col
-  `}
-  
-`;
 
 
 function App() {

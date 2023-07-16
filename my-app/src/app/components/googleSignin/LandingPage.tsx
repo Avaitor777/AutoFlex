@@ -17,16 +17,24 @@ const Bkg = styled.div`
    
   `};
 `;
+const Contain = styled.div`
+  min-height: 50vh;
+  min-width: 60vw;
+  box-shadow: 0 1.3px 12px -3px rgba(0, 0, 0, 0.4);
+  ${tw`
+  justify-center
+  items-center
+  bg-black
+  `};
+`;
 
 function Landing() {
   const backgroundImage = require("../../../assets/images/bgimg.svg").default;
 
-  return <Bkg style={{ backgroundImage: `url(${backgroundImage})`, 
-                       backgroundSize: 'cover', 
-                       backgroundPosition: 'center', 
-                       backgroundRepeat: 'no-repeat' }
-                    }>
+  return <Bkg style={{ backgroundImage: `url(${backgroundImage})`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }}>
+     <Contain > 
       <Signin />
+     </Contain>
     </Bkg>
   
 }

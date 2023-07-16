@@ -11,6 +11,7 @@ import { TopCars } from "./topcars";
 import { Footer } from "../../components/footer";
 
 const PageContainer = styled.div`
+ 
 ${tw`
     flex
     flex-col
