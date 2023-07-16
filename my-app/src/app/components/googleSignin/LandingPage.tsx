@@ -21,7 +21,11 @@ const Bkg = styled.div`
 function Landing() {
   const backgroundImage = require("../../../assets/images/bgimg.svg").default;
 
-  return <Bkg style={{ backgroundImage: `url(${backgroundImage})`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }}>
+  return <Bkg style={{ backgroundImage: `url(${backgroundImage})`, 
+                       backgroundSize: 'cover', 
+                       backgroundPosition: 'center', 
+                       backgroundRepeat: 'no-repeat' }
+                    }>
       <Signin />
     </Bkg>
   
