@@ -18,7 +18,7 @@ const BaseButton = styled.div`
         pb-3
         outline-none
         rounded-md
-        text-white
+        text-white                      //color*
         text-xs
         font-semibold
         border-transparent
@@ -45,7 +45,7 @@ const OutlinedButton = styled(BaseButton)`
 const FilledButton = styled(BaseButton)`
     ${tw`
          border-red-500 
-         text-red-500 
+         text-red-500                   //color*
          bg-transparent
          hover:bg-red-500 
          hover:text-white 

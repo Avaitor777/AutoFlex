@@ -30,7 +30,7 @@ const Btn = styled.span`
     
     rounded-full
     flex items-center justify-center
-    text-gray-600 
+    text-gray-600                       //color*
     text-xs
     md:text-sm
     cursor-pointer
@@ -84,14 +84,14 @@ const Container = styled.div`
     }
   }, []);
 
-  return  <Container>
+  return  (
+        <Container>
+            {(!Value) && (<Btn onClick={handleClick}><IoLogoGoogle /> <h1>Signin With Google</h1> </Btn>)
      
-     {(!Value) && (<Btn onClick={handleClick}><IoLogoGoogle /> <h1>Signin With Google</h1> </Btn>)
-     
-}
-    </Container>
+            }
+          </Container>
    
   
-}
+)}
 
 export default Signin;

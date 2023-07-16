@@ -43,7 +43,7 @@ const CarName = styled.h3`
     ${tw`
         text-base
         font-bold
-        text-black
+        text-black                          //color*
         mt-1 
         mb-1 
     `};
@@ -69,7 +69,7 @@ const SmallText = styled.p`
 
 const DailyPrice = styled.h5`
     ${tw`
-        text-red-500 
+        text-red-500                //color*
         font-bold
         text-sm
         mr-3 
@@ -78,7 +78,7 @@ const DailyPrice = styled.h5`
 
 const MonthlyPrice = styled.h5`
     ${tw`
-        text-gray-500 
+        text-gray-500                       //color*
         font-bold
         text-sm
     `};
@@ -86,7 +86,7 @@ const MonthlyPrice = styled.h5`
 
 const SmallIcon = styled.span`
     ${tw`
-        text-gray-400 
+        text-gray-400                                  //color*
         text-sm
         mr-1 
     `};
@@ -109,7 +109,7 @@ const CarDetail = styled.span`
 
 const CarInfo = styled.h5`
     ${tw`
-       text-gray-400 
+       text-gray-400                                       //color*
        text-sm
     `};
 `;

@@ -23,7 +23,7 @@ const LogoText = styled.div`
         text-xl
          md:text-2xl
          font-bold
-         text-black
+         text-black                         //color*
          m-1
      `};
      ${({ color }: any) => color === "white" ? tw`text-white` : tw`text-black` }

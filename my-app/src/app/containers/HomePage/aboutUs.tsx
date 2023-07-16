@@ -62,7 +62,7 @@ const Title = styled.h1`
         text-2xl
         md:text-5xl 
         font-extrabold
-        md:font-black
+        md:font-black        //color*
         md:leading-normal
     `};
 `;
@@ -72,7 +72,7 @@ const InfoText = styled.p`
         md:max-w-2xl 
         text-sm
         md:text-base
-        text-gray-500 
+        text-gray-500       //color*
         mt-4  
     `};
 `;

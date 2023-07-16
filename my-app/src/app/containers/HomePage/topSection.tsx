@@ -51,7 +51,7 @@ const Slogan = styled.h1`
         md:text-5xl
         lg:font-black
         md:font-extrabold
-        text-black
+        text-black                      //color*
         mb-4 
         sm:leading-snug
         lg:leading-normal
@@ -139,7 +139,7 @@ const BlobContainer = styled.div`
             sm:max-h-full
             overflow-hidden
             max-h-12 
-            text-gray-800 
+            text-gray-800                   //color*
         `}
     `;
 

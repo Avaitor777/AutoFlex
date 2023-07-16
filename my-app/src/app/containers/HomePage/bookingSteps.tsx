@@ -23,7 +23,7 @@ const Title = styled.h2`
     ${tw`
         text-3xl
         lg:text-5xl 
-        text-black
+        text-black                               //color*
         font-black
     `};
 `;
@@ -47,7 +47,7 @@ const StepConatiner = styled.div`
      md:w-96 
      items-center
      transition-colors
-     hover:text-red-500 
+     hover:text-red-500    //color*
      m-3 
     `};
 `;
@@ -66,7 +66,7 @@ const Step = styled.div`
 
 const StepTitle = styled.h4`
      ${tw`
-     text-black
+     text-black     //color*
      text-lg
      font-semibold
      mt-4 
@@ -79,13 +79,13 @@ const StepDescription = styled.p`
         text-xs
         md:text-sm
         text-center
-        text-gray-600 
+        text-gray-600                               //color*
     `};
 `;
 
 const StepIcon = styled.span`
      ${tw`
-        text-red-500 
+        text-red-500                                //color*
         text-3xl 
     `};
 `;

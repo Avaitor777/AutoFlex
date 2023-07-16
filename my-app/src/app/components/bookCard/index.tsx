@@ -37,7 +37,7 @@ const ItemContainer = styled.div`
 
 const Icon = styled.span`
  ${tw`
-    text-red-500 
+    text-red-500                                //color*
     fill-current
     text-xs
     md:text-base
@@ -49,7 +49,7 @@ const Icon = styled.span`
 // up down icon 
 const SmallIcon = styled.span`
     ${tw`
-        text-gray-500 
+        text-gray-500                               //color*
         fill-current
         text-xs
         md:text-base
@@ -60,7 +60,7 @@ const SmallIcon = styled.span`
 
 const Name = styled.span`
     ${tw`
-        text-gray-600 
+        text-gray-600                                  //color*
         text-xs
         md:text-sm
         cursor-pointer

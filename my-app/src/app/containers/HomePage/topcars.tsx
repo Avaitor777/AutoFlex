@@ -33,7 +33,7 @@ const Title = styled.h2`
     ${tw`
         text-3xl
         lg:text-5xl 
-        text-black
+        text-black        //color*
         font-black
     `};
 `;

@@ -45,7 +45,7 @@ const BottomContainer = styled.div`
 const CopyrightText = styled.span`
     font-size: 12px;
     ${tw`
-        text-gray-300 
+        text-gray-300           //color*
     `}
 `;
 
@@ -64,7 +64,7 @@ const AboutContainer = styled.div`
 
 const AboutText = styled.p`
     ${tw`
-        text-white
+        text-white                      //color*
         text-sm
         font-normal
         max-w-xs
@@ -109,7 +109,7 @@ const ListItem = styled.li`
     & > a {
         ${tw`
             text-xs
-            text-white
+            text-white                      //color*
             transition-all
             hover:text-gray-200 
         `};
@@ -120,7 +120,7 @@ const HeaderTitle = styled.div`  //hyper-headers mod
     ${tw`
         text-2xl 
         font-bold
-        text-white
+        text-white                      //color*
         mb-3
 
     `};
@@ -142,7 +142,7 @@ const RedIcon = styled.h3`
         flex
         items-center
         justify-center
-        text-white
+        text-white                      //color*
         text-base
         mr-2 
     `};
@@ -152,7 +152,7 @@ const RedIcon = styled.h3`
 const SmallText = styled.h6`
       ${tw`
         text-sm
-        text-white
+        text-white                          //color*
       `};
 `;
 export function Footer() {

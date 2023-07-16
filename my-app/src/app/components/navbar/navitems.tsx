@@ -18,7 +18,7 @@ const NavItem = styled.li<{ menu?: any }>` // single item having these featues
     ${tw`
         text-sm   // starting with reference to phone
         md:text-base
-        text-black
+        text-black                          //color*
         font-medium
         mr-1 
         md:mr-5 
@@ -31,7 +31,7 @@ const NavItem = styled.li<{ menu?: any }>` // single item having these featues
 
     ${( { menu }) => menu && css`
         ${tw`
-            text-white
+            text-white                              //color*
             text-xl
             mb-3  //margin bottom 
             focus:text-white
