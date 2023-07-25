@@ -6,6 +6,8 @@ import MeclarenImg from "../../../assets/images/mclaren-orange-big.png"
 import BlobImg from "../../../assets/images/blob.svg"
 import { SCREENS } from "../../components/responsive";
 import { Button } from "../../components/button";
+import {  useNavigate } from 'react-router-dom';
+
 
 const TopSectionContainer = styled.div`
     min-height: 00px;
@@ -154,6 +156,12 @@ const  ButtonsContainer = styled.div`
 
 export function TopSection() {
 
+    const navigate = useNavigate();
+    const handleClick = () => {
+
+              navigate("/HomePage")
+
+      };
     return <TopSectionContainer>
         <LeftContainer>
             <Slogan>Rent The Best Quality Car's with us</Slogan>
@@ -163,8 +171,13 @@ export function TopSection() {
                 you like
             </Description>
             <ButtonsContainer>
-                <Button text="Book Your Ride " />
-                <Button theme="filled" text=" Sell Your Car" />
+                <Button theme="filled" text=" Book your ride " onClick={function (): void {
+                    throw new Error("Function not implemented.");
+                } } />                                                          //button call here frpm button folder
+
+                <Button theme="filled" text=" Sell Your Car" onClick={function (): void {
+                    throw new Error("Function not implemented.");
+                } } />
            </ButtonsContainer>
         </LeftContainer>
         <RightContainer>

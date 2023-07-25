@@ -147,7 +147,10 @@ export function BookCard() {
             )}
         </ItemContainer>
         <Marginer direction="horizontal" margin="2em" />
-        <Button text="Book your ride" />
+        <Button theme="filled" text=" Book your ride" onClick={function (): void {
+                    throw new Error("Function not implemented.");
+                } } />                                                 //button call fucntion call from button folder
+
     </CardContainer>
 
 }

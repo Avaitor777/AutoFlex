@@ -166,6 +166,9 @@ export function Car(props: ICarProps)  {
                     <CarInfo>{ gasType }</CarInfo>
                 </CarDetail>
             </CarDetailsContainer>
-            <RentButton text="Rent now" />
+            <RentButton theme="filled" text=" Rent now" onClick={function (): void {
+                    throw new Error("Function not implemented.");
+                } } />                                  //button call function from button folder(entension of icarprop)
+
         </CarContainer>
 }

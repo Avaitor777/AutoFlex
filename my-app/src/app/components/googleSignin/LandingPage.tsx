@@ -3,7 +3,6 @@ import { Button } from "../button";
 import { HomePage } from "../../containers/HomePage";
 import tw from "twin.macro";
 import styled, { css } from "styled-components";
-import { useNavigate } from "react-router-dom";
 import Signin from "./signin";
 
 const Bkg = styled.div`
